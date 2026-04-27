@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marca KIMBASSA - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts pour une belle typographie -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ========== HEADER / NAVIGATION ========== -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Marca KIMBASSA</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#competences">Compétences</a></li>
+                    <li><a href="#projets">Projets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== SECTION ACCUEIL ========== -->
+    <section id="accueil" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h2>Bonjour, je suis <span class="highlight">Marca KIMBASSA</span></h2>
+                <p>Développeur Web passionné par la création de sites modernes et responsives.</p>
+                <a href="#contact" class="btn">Me contacter</a>
+            </div>
+            <div class="hero-image">
+                <!-- Placeholder pour l'avatar - à remplacer par une vraie image -->
+                <div class="avatar-placeholder">
+                    <img src="images/marca.png" alt="Marca KIMBASSA">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION COMPÉTENCES ========== -->
+    <section id="competences" class="competences">
+        <div class="container">
+            <h2 class="section-title">Mes Compétences</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>HTML5</h3>
+                    <p>Structure sémantique et accessible</p>
+                </div>
+                <div class="skill-card">
+                    <h3>CSS3</h3>
+                    <p>Animations, Flexbox, Grid, Responsive</p>
+                </div>
+                <div class="skill-card">
+                    <h3>JavaScript</h3>
+                    <p>Interactivité et dynamisme</p>
+                </div>
+                <div class="skill-card">
+                    <h3>React</h3>
+                    <p>Création d'interfaces modernes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TABLEAU : PROJETS & RÉSULTATS ========== -->
+    <section id="projets" class="projets">
+        <div class="container">
+            <h2 class="section-title">Mes Projets</h2>
+
+            <!-- TABLEAU HTML -->
+            <table class="projets-table">
+                <thead>
+                    <tr>
+                        <th>Projet</th>
+                        <th>Technologies</th>
+                        <th>Année</th>
+                        <th>Résultat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Site E-commerce</td>
+                        <td>HTML, CSS, JavaScript</td>
+                        <td>2024</td>
+                        <td><span class="badge success">Terminé</span></td>
+                    </tr>
+                    <tr>
+                        <td>Application Météo</td>
+                        <td>React, API OpenWeather</td>
+                        <td>2025</td>
+                        <td><span class="badge success">Terminé</span></td>
+                    </tr>
+                    <tr>
+                        <td>Blog Personnel</td>
+                        <td>HTML, CSS, PHP</td>
+                        <td>2024</td>
+                        <td><span class="badge warning">En cours</span></td>
+                    </tr>
+                    <tr>
+                        <td>Dashboard Admin</td>
+                        <td>React, Tailwind CSS</td>
+                        <td>2025</td>
+                        <td><span class="badge success">Terminé</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ========== FORMULAIRE DE CONTACT ========== -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contactez-moi</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Discutons de votre projet</h3>
+                    <p>N'hésitez pas à me contacter pour toute collaboration ou question.</p>
+                    <ul class="contact-details">
+                        <li>
+                            <a href="mailto:marca.kimbassa@email.com">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="icon icon-email" aria-hidden="true">
+                                    <path d="M3 8.5v7A2.5 2.5 0 0 0 5.5 18h13A2.5 2.5 0 0 0 21 15.5v-7" />
+                                    <path d="M21 6.5l-9 6-9-6" />
+                                </svg>
+                                marca.kimbassa@email.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+242061234567">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="icon icon-phone" aria-hidden="true">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.08 4.18 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.72c.12.99.35 1.95.67 2.86a2 2 0 0 1-.45 2.11L8.91 9.09a13 13 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.11-.45c.9.32 1.87.55 2.86.67A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                                +242 06 123 4567
+                            </a>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" class="icon icon-location" aria-hidden="true">
+                                <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="2.5" />
+                            </svg>
+                            Brazzaville, Congo
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- FORMULAIRE DE CONTACT -->
+                <form class="contact-form" action="#" method="post">
+                    <div class="form-group">
+                        <label for="nom">Nom complet *</label>
+                        <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sujet">Sujet</label>
+                        <select id="sujet" name="sujet">
+                            <option value="projet">Demande de projet</option>
+                            <option value="collaboration">Collaboration</option>
+                            <option value="emploi">Opportunité d'emploi</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required
+                            placeholder="Votre message..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Marca KIMBASSA - Tous droits réservés</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

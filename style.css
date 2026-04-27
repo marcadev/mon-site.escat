@@ -1,0 +1,1612 @@
+/* ==========================================================================
+   FEUILLE DE STYLE - PORTFOLIO MARCA KIMBASSA
+   ==========================================================================
+   Ce fichier contient tous les styles du portfolio.
+   Chaque propriété est expliquée pour comprendre son rôle.
+   ========================================================================== */
+
+/* ==========================================================================
+   PARTIE 1 : RESET & VARIABLES GLOBALES
+   ========================================================================== */
+
+/*
+   SELECTEUR UNIVERSEL (*)
+   Le sélecteur * cible TOUS les éléments HTML de la page.
+   C'est comme dire "applique ces règles à absolument tout".
+*/
+
+* {
+    /* 
+        MARGIN: 0
+        Supprime toutes les marges extérieures par défaut.
+        Par défaut, les navigateurs ajoutent des marges automatiques
+        (ex: <body> a une marge de 8px, <h1> a des marges).
+        En mettant 0, on repart d'une feuille blanche.
+    */
+    margin: 0;
+    
+    /* 
+        PADDING: 0
+        Supprime tous les espaces intérieurs par défaut.
+        Comme les marges, certains éléments ont des paddings natifs
+        (ex: <ul> a un padding-left pour les puces).
+    */
+    padding: 0;
+    
+    /* 
+        BOX-SIZING: BORDER-BOX
+        La propriété la plus importante !
+        
+        Par défaut (content-box), la largeur d'un élément ne compte
+        que son contenu. Le padding et la bordure s'ajoutent en plus,
+        ce qui fait que l'élément est plus grand que prévu.
+        
+        Avec border-box, la largeur définie (width) INCLUT déjà
+        le contenu + le padding + la bordure.
+        
+        Exemple : width: 200px; padding: 20px; border: 5px;
+        - Avec content-box : largeur réelle = 200 + 40 + 10 = 250px
+        - Avec border-box : largeur réelle = 200px (magique !)
+        
+        C'est BEAUCOUP plus prévisible et plus facile à utiliser.
+    */
+    box-sizing: border-box;
+}
+
+/*
+    SELECTEUR PAR ÉLÉMENT (body)
+    Cible la balise <body>, le conteneur principal de la page.
+*/
+
+body {
+    /* 
+        FONT-FAMILY: Définit la police de caractères utilisée.
+        'Poppins' est une police moderne importée de Google Fonts.
+        Si Poppins n'est pas disponible, on utilise 'sans-serif'
+        comme police de secours (fallback).
+        
+        La liste est lue de gauche à droite : on prend la première
+        qui est disponible sur l'ordinateur de l'utilisateur.
+    */
+    font-family: 'Poppins', sans-serif;
+    
+    /* 
+        LINE-HEIGHT: Hauteur de ligne.
+        1.6 signifie 1.6 fois la taille de la police.
+        Si font-size = 16px, line-height = 25.6px.
+        Une valeur > 1 améliore la lisibilité des textes longs.
+    */
+    line-height: 1.6;
+    
+    /* 
+        COLOR: Couleur du texte.
+        #333 est un gris très foncé (presque noir mais plus doux
+        que du noir pur #000 qui fatigue les yeux).
+    */
+    color: #333;
+    
+    /* 
+        BACKGROUND-COLOR: Couleur de fond.
+        #fafafa est un gris très clair, presque blanc.
+        C'est la couleur de fond générale de la page.
+    */
+    background-color: #fafafa;
+}
+
+/*
+    SELECTEUR DE CLASSE (.container)
+    Tous les éléments avec class="container" héritent de ces styles.
+    C'est une classe utilitaire pour centrer et limiter le contenu.
+*/
+
+.container {
+    /* 
+        WIDTH: 90%
+        Largeur relative : 90% de la largeur de son parent.
+        Sur un écran large, cela laisse 5% d'espace vide de chaque côté.
+    */
+    width: 90%;
+    
+    /* 
+        MAX-WIDTH: 1200px
+        Largeur maximale : même si l'écran est plus large,
+        le conteneur ne dépassera jamais 1200px.
+        C'est important pour la lisibilité : des lignes trop longues
+        sont difficiles à lire.
+    */
+    max-width: 1200px;
+    
+    /* 
+        MARGIN: 0 auto
+        Une valeur très importante !
+        - 0 : marge haut et bas = 0
+        - auto : marge gauche et droite automatique
+        Cela CENTRE HORIZONTALEMENT l'élément dans son parent.
+        Fonctionne uniquement si l'élément a une largeur définie.
+    */
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   PARTIE 2 : TYPOGRAPHIE & TITRES
+   ========================================================================== */
+
+/*
+    SELECTEURS GROUPÉS (h1, h2, h3)
+    On applique les mêmes styles à plusieurs sélecteurs en une fois.
+    Cela évite de répéter le code.
+*/
+
+h1, h2, h3 {
+    /* 
+        FONT-WEIGHT: 600
+        Épaisseur de la police.
+        400 = normal, 700 = gras, 600 = entre les deux.
+        Les titres sont plus épais que le texte normal.
+    */
+    font-weight: 600;
+    
+    /* 
+        LINE-HEIGHT: 1.2
+        Hauteur de ligne plus petite pour les titres (1.2 au lieu de 1.6).
+        Les titres ont besoin de moins d'espace entre les lignes.
+    */
+    line-height: 1.2;
+}
+
+/*
+    SELECTEUR DE CLASSE (.section-title)
+    Style spécifique pour les titres de section (Compétences, Projets, Contact)
+*/
+
+.section-title {
+    /* 
+        FONT-SIZE: 2.5rem
+        Taille de police en rem.
+        rem = "root em" = relatif à la taille de police de l'élément racine <html>.
+        Par défaut, 1rem = 16px, donc 2.5rem = 40px.
+        L'avantage : si l'utilisateur change la taille de police par défaut,
+        tout s'adapte automatiquement (accessibilité).
+    */
+    font-size: 2.5rem;
+    
+    /* 
+        TEXT-ALIGN: center
+        Aligne le texte au centre horizontalement.
+        Autres valeurs : left, right, justify.
+    */
+    text-align: center;
+    
+    /* 
+        MARGIN-BOTTOM: 2rem
+        Marge extérieure en bas.
+        Crée un espace entre le titre et le contenu suivant.
+    */
+    margin-bottom: 2rem;
+    
+    /* 
+        COLOR: #2c3e50
+        Couleur bleu-gris foncé.
+        Les codes hexadécimaux (#RRGGBB) définissent une couleur
+        avec des valeurs de rouge, vert, bleu de 00 à FF.
+        #2c3e50 = (44, 62, 80) en RGB.
+    */
+    color: #2c3e50;
+    
+    /* 
+        POSITION: relative
+        Nécessaire pour positionner l'élément pseudo-élément ::after
+        qui va créer le petit trait sous le titre.
+        relative permet de décaler l'élément par rapport à sa position normale.
+    */
+    position: relative;
+}
+
+/*
+    PSEUDO-ÉLÉMENT ::after
+    Crée un élément virtuel à la FIN du contenu de .section-title.
+    On l'utilise pour ajouter une décoration sans ajouter de HTML.
+*/
+
+.section-title::after {
+    /* 
+        CONTENT: ""
+        Obligatoire pour les pseudo-éléments ::before et ::after.
+        Même vide, il faut le définir pour que l'élément apparaisse.
+    */
+    content: '';
+    
+    /* 
+        DISPLAY: block
+        Transforme l'élément (qui est inline par défaut) en élément de type bloc.
+        Un élément block occupe toute la largeur disponible.
+    */
+    display: block;
+    
+    /* 
+        WIDTH: 60px
+        Largeur fixe du trait décoratif.
+    */
+    width: 60px;
+    
+    /* 
+        HEIGHT: 4px
+        Hauteur du trait.
+    */
+    height: 4px;
+    
+    /* 
+        BACKGROUND: linear-gradient()
+        Crée un dégradé linéaire.
+        - 135deg : direction diagonale (du bas-gauche vers haut-droit)
+        - #667eea : couleur de départ (violet clair)
+        - #764ba2 : couleur d'arrivée (violet foncé)
+        Le dégradé est une image de fond, donc ça fonctionne avec background.
+    */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    
+    /* 
+        MARGIN: 0.5rem auto 0
+        - 0.5rem : marge haute
+        - auto : marge gauche/droite automatique (centre horizontalement)
+        - 0 : marge basse
+        C'est ce qui centre le trait sous le titre.
+    */
+    margin: 0.5rem auto 0;
+    
+    /* 
+        BORDER-RADIUS: 2px
+        Arrondit les angles du trait.
+        Plus la valeur est grande, plus les angles sont arrondis.
+    */
+    border-radius: 2px;
+}
+
+/*
+    SELECTEUR DE CLASSE (.highlight)
+    Applique un effet dégradé sur du texte.
+*/
+
+.highlight {
+    /* 
+        COLOR: #667eea
+        Couleur de secours (si le dégradé n'est pas supporté).
+    */
+    color: #667eea;
+    
+    /* 
+        BACKGROUND: linear-gradient()
+        Crée un dégradé de fond.
+    */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    
+    /* 
+        -WEBKIT-BACKGROUND-CLIP: text
+        Propriété WebKit (Chrome, Safari) qui permet de découper le fond
+        pour qu'il n'apparaisse que derrière le texte.
+        "webkit" est le préfixe pour les navigateurs basés sur WebKit.
+    */
+    -webkit-background-clip: text;
+    
+    /* 
+        BACKGROUND-CLIP: text
+        Version standard de la propriété.
+        Le fond est découpé selon la forme du texte.
+    */
+    background-clip: text;
+    
+    /* 
+        COLOR: transparent
+        Rend le texte transparent pour laisser apparaître le dégradé derrière.
+        Sans cela, la couleur du texte cacherait le dégradé.
+    */
+    color: transparent;
+}
+
+/* ==========================================================================
+   PARTIE 3 : HEADER & NAVIGATION
+   ========================================================================== */
+
+/*
+    SELECTEUR PAR ÉLÉMENT (header)
+    Style de l'en-tête de la page.
+*/
+
+header {
+    /* 
+        BACKGROUND-COLOR: #fff
+        Fond blanc (#fff est un raccourci pour #ffffff).
+    */
+    background-color: #fff;
+    
+    /* 
+        BOX-SHADOW: 0 2px 10px rgba(0,0,0,0.1)
+        Ajoute une ombre portée.
+        - 0 : décalage horizontal
+        - 2px : décalage vertical (ombre vers le bas)
+        - 10px : flou (plus la valeur est grande, plus l'ombre est floue)
+        - rgba(0,0,0,0.1) : couleur noire avec 10% d'opacité
+        L'ombre donne de la profondeur et sépare visuellement le header du contenu.
+    */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    
+    /* 
+        POSITION: fixed
+        Positionnement fixe par rapport à la fenêtre du navigateur.
+        L'élément reste à sa place même quand on fait défiler la page.
+        C'est utilisé pour les barres de navigation collantes.
+    */
+    position: fixed;
+    
+    /* 
+        TOP: 0
+        Colle l'élément en haut de la fenêtre.
+        Fonctionne avec position: fixed.
+    */
+    top: 0;
+    
+    /* 
+        WIDTH: 100%
+        Prend toute la largeur de la fenêtre.
+    */
+    width: 100%;
+    
+    /* 
+        Z-INDEX: 1000
+        Définit l'ordre d'empilement (comme des calques).
+        Plus la valeur est élevée, plus l'élément est "au-dessus".
+        1000 est une valeur arbitraire suffisamment grande pour être
+        au-dessus du contenu (qui a z-index: 0 par défaut).
+    */
+    z-index: 1000;
+}
+
+/*
+    SELECTEUR DESCENDANT
+    Cible les .container à l'intérieur du header.
+    Le .container du header a des styles spécifiques.
+*/
+
+header .container {
+    /* 
+        DISPLAY: flex
+        Active le mode Flexbox.
+        C'est un système de mise en page puissant qui permet
+        d'aligner et de distribuer des éléments facilement.
+        Les enfants deviennent des éléments flexibles.
+    */
+    display: flex;
+    
+    /* 
+        JUSTIFY-CONTENT: space-between
+        Distribue les enfants dans le conteneur flex :
+        - Premier élément collé à gauche
+        - Dernier élément collé à droite
+        - Espace égal entre eux
+    */
+    justify-content: space-between;
+    
+    /* 
+        ALIGN-ITEMS: center
+        Aligne verticalement les enfants au centre.
+        Sans cela, les éléments seraient alignés en haut.
+    */
+    align-items: center;
+    
+    /* 
+        PADDING: 1rem 0
+        - 1rem : padding haut et bas
+        - 0 : padding gauche et droit
+        Crée un espace vertical autour du contenu du header.
+    */
+    padding: 1rem 0;
+}
+
+/*
+    SELECTEUR DE CLASSE (.logo h1)
+    Cible les <h1> à l'intérieur des éléments avec class="logo".
+*/
+
+.logo h1 {
+    /* 
+        FONT-SIZE: 1.5rem
+        Taille de police pour le logo.
+        1.5rem = 24px (si 1rem = 16px).
+    */
+    font-size: 1.5rem;
+    
+    /* 
+        COLOR: #333
+        Couleur gris foncé pour le texte du logo.
+    */
+    color: #333;
+}
+
+/*
+    SELECTEUR PAR ÉLÉMENT (nav ul)
+    Cible les listes non ordonnées (<ul>) dans la navigation.
+*/
+
+nav ul {
+    /* 
+        LIST-STYLE: none
+        Supprime les puces (•) par défaut des listes <ul>.
+    */
+    list-style: none;
+    
+    /* 
+        DISPLAY: flex
+        Transforme la liste en conteneur flex.
+        Les éléments <li> seront alignés horizontalement.
+    */
+    display: flex;
+    
+    /* 
+        GAP: 2rem
+        Espacement entre les éléments flexibles (les <li>).
+        C'est plus moderne que margin-left/right.
+    */
+    gap: 2rem;
+}
+
+/*
+    SELECTEUR DESCENDANT (nav ul li a)
+    Cible les liens (<a>) à l'intérieur des <li> dans la navigation.
+*/
+
+nav ul li a {
+    /* 
+        TEXT-DECORATION: none
+        Supprime le soulignement par défaut des liens.
+    */
+    text-decoration: none;
+    
+    /* 
+        COLOR: #555
+        Couleur gris moyen pour les liens de navigation.
+    */
+    color: #555;
+    
+    /* 
+        FONT-WEIGHT: 500
+        Épaisseur de police moyenne (entre normal et gras).
+    */
+    font-weight: 500;
+    
+    /* 
+        TRANSITION: all 0.3s ease
+        Anime les changements de propriétés.
+        - all : toutes les propriétés qui changent
+        - 0.3s : durée de l'animation (0.3 secondes)
+        - ease : courbe d'accélération (début et fin doux)
+        Quand on survole le lien, la couleur change en douceur.
+    */
+    transition: all 0.3s ease;
+}
+
+/*
+    PSEUDO-CLASSE :hover
+    S'applique quand la souris survole l'élément.
+*/
+
+nav ul li a:hover {
+    /* 
+        COLOR: #667eea
+        Change la couleur du lien au survol.
+        La transition ci-dessus rend ce changement fluide.
+    */
+    color: #667eea;
+}
+
+/* ==========================================================================
+   PARTIE 4 : SECTION HERO (ACCUEIL)
+   ========================================================================== */
+
+/*
+    SELECTEUR DE CLASSE (.hero)
+    Section d'accueil avec l'introduction.
+*/
+
+.hero {
+    /* 
+        PADDING: 120px 0 60px
+        - 120px : padding haut (compense le header fixed)
+        - 0 : padding latéral
+        - 60px : padding bas
+        Crée un espacement interne.
+    */
+    padding: 120px 0 60px;
+    
+    /* 
+        BACKGROUND: linear-gradient()
+        Dégradé de fond pour la section hero.
+        Donne un effet visuel attractif.
+    */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    
+    /* 
+        MIN-HEIGHT: 100vh
+        Hauteur minimale : 100% de la hauteur de la fenêtre (viewport height).
+        La section fait au moins toute la hauteur de l'écran.
+    */
+    min-height: 100vh;
+    
+    /* 
+        DISPLAY: flex
+        Active Flexbox pour centrer le contenu verticalement.
+    */
+    display: flex;
+    
+    /* 
+        ALIGN-ITEMS: center
+        Centre verticalement les enfants dans le conteneur flex.
+    */
+    align-items: center;
+}
+
+/*
+    SELECTEUR DESCENDANT (.hero .hero-content)
+    Style spécifique du contenu dans la section hero.
+*/
+
+.hero .hero-content {
+    /* 
+        DISPLAY: flex
+        Met en place Flexbox pour aligner texte et image.
+    */
+    display: flex;
+    
+    /* 
+        ALIGN-ITEMS: center
+        Aligne verticalement au centre.
+    */
+    align-items: center;
+    
+    /* 
+        JUSTIFY-CONTENT: space-between
+        Écarte le texte et l'image.
+    */
+    justify-content: space-between;
+    
+    /* 
+        GAP: 3rem
+        Espace de 3rem (48px) entre le texte et l'image.
+    */
+    gap: 3rem;
+}
+
+/*
+    SELECTEUR DE CLASSE (.hero-text)
+    Conteneur du texte d'introduction.
+*/
+
+.hero-text {
+    /* 
+        FLEX: 1
+        Propriété Flexbox.
+        Signifie que cet élément peut grandir et prendre l'espace disponible.
+        Avec flex:1 sur les deux éléments, ils partagent l'espace également.
+    */
+    flex: 1;
+}
+
+.hero-text h2 {
+    /* 
+        FONT-SIZE: 2.5rem
+        Grande taille pour le titre principal.
+    */
+    font-size: 2.5rem;
+    
+    /* 
+        MARGIN-BOTTOM: 1rem
+        Espace sous le titre.
+    */
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    /* 
+        FONT-SIZE: 1.1rem
+        Texte légèrement plus grand que le texte normal.
+    */
+    font-size: 1.1rem;
+    
+    /* 
+        COLOR: #666
+        Gris plus clair pour le sous-titre.
+    */
+    color: #666;
+    
+    /* 
+        MARGIN-BOTTOM: 2rem
+        Espace avant le bouton.
+    */
+    margin-bottom: 2rem;
+}
+
+/*
+    SELECTEUR DE CLASSE (.btn)
+    Style des boutons sur toute la page.
+*/
+
+.btn {
+    /* 
+        DISPLAY: inline-block
+        L'élément est en ligne (inline) mais peut avoir des dimensions
+        (width, height, padding) contrairement aux inline purs.
+    */
+    display: inline-block;
+    
+    /* 
+        PADDING: 12px 30px
+        Espacement interne :
+        - 12px : haut et bas
+        - 30px : gauche et droit
+    */
+    padding: 12px 30px;
+    
+    /* 
+        BACKGROUND: linear-gradient()
+        Dégradé de fond pour le bouton.
+    */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    
+    /* 
+        COLOR: white
+        Texte blanc.
+    */
+    color: white;
+    
+    /* 
+        TEXT-DECORATION: none
+        Supprime le soulignement du lien.
+    */
+    text-decoration: none;
+    
+    /* 
+        BORDER-RADIUS: 30px
+        Angles très arrondis (bouton "pilule").
+    */
+    border-radius: 30px;
+    
+    /* 
+        FONT-WEIGHT: 500
+        Police semi-gras.
+    */
+    font-weight: 500;
+    
+    /* 
+        TRANSITION: transform 0.3s ease, box-shadow 0.3s ease
+        Anime deux propriétés :
+        - transform : pour l'effet de levée
+        - box-shadow : pour l'effet d'ombre
+    */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* 
+        BORDER: none
+        Supprime la bordure par défaut des boutons.
+    */
+    border: none;
+    
+    /* 
+        CURSOR: pointer
+        Change le curseur en main cliquable au survol.
+    */
+    cursor: pointer;
+}
+
+.btn:hover {
+    /* 
+        TRANSFORM: translateY(-2px)
+        Déplace l'élément vers le haut de 2px.
+        Crée un effet "légèrement soulève" au survol.
+    */
+    transform: translateY(-2px);
+    
+    /* 
+        BOX-SHADOW: 0 5px 15px rgba(102,126,234,0.4)
+        Ajoute une ombre colorée (violette) au survol.
+        Renforce l'effet de profondeur.
+    */
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/*
+    SELECTEUR DE CLASSE (.hero-image)
+    Conteneur de l'avatar.
+*/
+
+.hero-image {
+    /* 
+        FLEX: 1
+        Prend l'espace disponible (partage avec hero-text).
+    */
+    flex: 1;
+    
+    /* 
+        TEXT-ALIGN: center
+        Centre l'image horizontalement.
+    */
+    text-align: center;
+}
+
+/*
+    SELECTEUR DESCENDANT (.avatar-placeholder img)
+    Style de l'image d'avatar.
+*/
+
+.avatar-placeholder img {
+    /* 
+        WIDTH: 250px
+        Largeur fixe de l'avatar.
+    */
+    width: 250px;
+    
+    /* 
+        HEIGHT: 250px
+        Hauteur fixe (carré parfait).
+    */
+    height: 250px;
+    
+    /* 
+        BORDER-RADIUS: 50%
+        50% arrondit complètement l'élément pour faire un cercle.
+        Fonctionne parce que l'image est carrée.
+    */
+    border-radius: 50%;
+    
+    /* 
+        OBJECT-FIT: cover
+        L'image remplit tout l'espace sans se déformer.
+        Si l'image n'est pas parfaitement carrée, elle sera recadrée.
+    */
+    object-fit: cover;
+    
+    /* 
+        BORDER: 5px solid white
+        Bordure blanche de 5px autour de l'avatar.
+    */
+    border: 5px solid white;
+    
+    /* 
+        BOX-SHADOW: 0 10px 30px rgba(0,0,0,0.2)
+        Ombre portée pour donner du relief à l'avatar.
+    */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   PARTIE 5 : SECTION COMPÉTENCES
+   ========================================================================== */
+
+/*
+    SELECTEUR DE CLASSE (.competences)
+    Section des compétences.
+*/
+
+.competences {
+    /* 
+        PADDING: 80px 0
+        Espacement interne vertical de 80px.
+    */
+    padding: 80px 0;
+    
+    /* 
+        BACKGROUND-COLOR: white
+        Fond blanc pour contraster avec les autres sections.
+    */
+    background-color: white;
+}
+
+/*
+    SELECTEUR DE CLASSE (.skills-grid)
+    Grille des cartes de compétences.
+*/
+
+.skills-grid {
+    /* 
+        DISPLAY: grid
+        Active CSS Grid, un système de mise en page puissant.
+        Contrairement à Flexbox (1D), Grid gère 2 dimensions (lignes et colonnes).
+    */
+    display: grid;
+    
+    /* 
+        GRID-TEMPLATE-COLUMNS: repeat(auto-fit, minmax(250px, 1fr))
+        Crée des colonnes automatiques :
+        - auto-fit : crée autant de colonnes que possible
+        - minmax(250px, 1fr) : chaque colonne fait au minimum 250px,
+          et au maximum 1 fraction (part égale de l'espace restant)
+        C'est une technique responsive : les cartes s'adaptent à l'écran.
+    */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    
+    /* 
+        GAP: 2rem
+        Espacement entre les cartes (lignes et colonnes).
+    */
+    gap: 2rem;
+}
+
+/*
+    SELECTEUR DE CLASSE (.skill-card)
+    Style de chaque carte de compétence.
+*/
+
+.skill-card {
+    /* 
+        BACKGROUND: white
+        Fond blanc pour chaque carte.
+    */
+    background: white;
+    
+    /* 
+        PADDING: 2rem
+        Espacement interne uniforme de 2rem (32px).
+    */
+    padding: 2rem;
+    
+    /* 
+        TEXT-ALIGN: center
+        Centre le texte à l'intérieur de la carte.
+    */
+    text-align: center;
+    
+    /* 
+        BORDER-RADIUS: 15px
+        Angles arrondis de 15 pixels.
+    */
+    border-radius: 15px;
+    
+    /* 
+        BOX-SHADOW: 0 5px 20px rgba(0,0,0,0.08)
+        Ombre légère pour donner de la profondeur.
+        rgba(0,0,0,0.08) = noir avec 8% d'opacité (très transparent).
+    */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    
+    /* 
+        TRANSITION: transform 0.3s ease
+        Anime la propriété transform au survol.
+    */
+    transition: transform 0.3s ease;
+    
+    /* 
+        BORDER: 1px solid #eee
+        Bordure gris très clair.
+    */
+    border: 1px solid #eee;
+}
+
+.skill-card:hover {
+    /* 
+        TRANSFORM: translateY(-5px)
+        Soulève la carte de 5px au survol.
+    */
+    transform: translateY(-5px);
+    
+    /* 
+        BOX-SHADOW: 0 10px 30px rgba(0,0,0,0.12)
+        Ombre plus prononcée au survol pour renforcer l'effet.
+    */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.skill-card h3 {
+    /* 
+        COLOR: #667eea
+        Couleur violette pour les titres des compétences.
+    */
+    color: #667eea;
+    
+    /* 
+        MARGIN-BOTTOM: 0.5rem
+        Espace sous le titre.
+    */
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   PARTIE 6 : TABLEAU DES PROJETS
+   ========================================================================== */
+
+/*
+    SELECTEUR DE CLASSE (.projets)
+    Section des projets avec le tableau.
+*/
+
+.projets {
+    /* 
+        PADDING: 80px 0
+        Espacement interne vertical.
+    */
+    padding: 80px 0;
+    
+    /* 
+        BACKGROUND-COLOR: #f8f9fa
+        Fond gris très clair pour alterner avec la section précédente.
+    */
+    background-color: #f8f9fa;
+}
+
+/*
+    SELECTEUR DE CLASSE (.projets-table)
+    Style du tableau HTML.
+*/
+
+.projets-table {
+    /* 
+        WIDTH: 100%
+        Le tableau prend toute la largeur du conteneur.
+    */
+    width: 100%;
+    
+    /* 
+        BORDER-COLLAPSE: collapse
+        Fusionne les bordures des cellules.
+        Par défaut, chaque cellule a sa propre bordure, ce qui crée un effet
+        "double bordure". collapse supprime cet effet.
+    */
+    border-collapse: collapse;
+    
+    /* 
+        BACKGROUND: white
+        Fond blanc pour le tableau.
+    */
+    background: white;
+    
+    /* 
+        BORDER-RADIUS: 15px
+        Angles arrondis pour le tableau.
+    */
+    border-radius: 15px;
+    
+    /* 
+        OVERFLOW: hidden
+        Important pour que border-radius fonctionne !
+        Sans overflow: hidden, les angles arrondis sont cachés par le contenu.
+    */
+    overflow: hidden;
+    
+    /* 
+        BOX-SHADOW: 0 5px 20px rgba(0,0,0,0.08)
+        Ombre légère pour faire ressortir le tableau.
+    */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/*
+    SELECTEURS GROUPÉS (.projets-table th, .projets-table td)
+    Style des cellules d'en-tête et de données.
+*/
+
+.projets-table th,
+.projets-table td {
+    /* 
+        PADDING: 1rem
+        Espacement interne uniforme dans les cellules.
+    */
+    padding: 1rem;
+    
+    /* 
+        TEXT-ALIGN: left
+        Aligne le texte à gauche.
+    */
+    text-align: left;
+    
+    /* 
+        BORDER-BOTTOM: 1px solid #eee
+        Bordure fine en bas de chaque cellule.
+    */
+    border-bottom: 1px solid #eee;
+}
+
+/*
+    SELECTEUR PAR ÉLÉMENT (th)
+    Style spécifique des cellules d'en-tête.
+*/
+
+.projets-table th {
+    /* 
+        BACKGROUND: linear-gradient()
+        Dégradé pour l'en-tête du tableau.
+    */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    
+    /* 
+        COLOR: white
+        Texte blanc sur fond violet.
+    */
+    color: white;
+    
+    /* 
+        FONT-WEIGHT: 600
+        Texte en gras pour les en-têtes.
+    */
+    font-weight: 600;
+}
+
+/*
+    PSEUDO-CLASSE :hover sur les lignes du tableau
+    S'applique quand on survole une ligne.
+*/
+
+.projets-table tr:hover {
+    /* 
+        BACKGROUND-COLOR: #f5f5f5
+        Change la couleur de fond de la ligne survolée.
+        Améliore la lisibilité et l'interactivité.
+    */
+    background-color: #f5f5f5;
+}
+
+/*
+    SELECTEUR DE CLASSE (.badge)
+    Style des badges dans le tableau (Terminé, En cours).
+*/
+
+.badge {
+    /* 
+        DISPLAY: inline-block
+        Permet d'ajouter du padding sans casser la ligne.
+    */
+    display: inline-block;
+    
+    /* 
+        PADDING: 0.25rem 0.75rem
+        Espacement interne :
+        - 0.25rem : haut et bas
+        - 0.75rem : gauche et droit
+    */
+    padding: 0.25rem 0.75rem;
+    
+    /* 
+        BORDER-RADIUS: 20px
+        Angles arrondis pour un effet "pilule".
+    */
+    border-radius: 20px;
+    
+    /* 
+        FONT-SIZE: 0.85rem
+        Police légèrement plus petite que le texte normal.
+    */
+    font-size: 0.85rem;
+    
+    /* 
+        FONT-WEIGHT: 500
+        Police semi-gras.
+    */
+    font-weight: 500;
+}
+
+/*
+    SELECTEUR DE CLASSE (.badge.success)
+    Variante pour les badges "Terminé" (succès).
+*/
+
+.badge.success {
+    /* 
+        BACKGROUND-COLOR: #d4edda
+        Fond vert clair.
+    */
+    background-color: #d4edda;
+    
+    /* 
+        COLOR: #155724
+        Texte vert foncé.
+    */
+    color: #155724;
+}
+
+/*
+    SELECTEUR DE CLASSE (.badge.warning)
+    Variante pour les badges "En cours" (attention/warning).
+*/
+
+.badge.warning {
+    /* 
+        BACKGROUND-COLOR: #fff3cd
+        Fond jaune clair.
+    */
+    background-color: #fff3cd;
+    
+    /* 
+        COLOR: #856404
+        Texte jaune foncé/ocre.
+    */
+    color: #856404;
+}
+
+/* ==========================================================================
+   PARTIE 7 : FORMULAIRE DE CONTACT
+   ========================================================================== */
+
+/*
+    SELECTEUR DE CLASSE (.contact)
+    Section du formulaire de contact.
+*/
+
+.contact {
+    /* 
+        PADDING: 80px 0
+        Espacement interne vertical.
+    */
+    padding: 80px 0;
+    
+    /* 
+        BACKGROUND-COLOR: white
+        Fond blanc.
+    */
+    background-color: white;
+}
+
+/*
+    SELECTEUR DE CLASSE (.contact-wrapper)
+    Conteneur qui accueille les informations de contact et le formulaire.
+*/
+
+.contact-wrapper {
+    /* 
+        DISPLAY: flex
+        Aligne les deux colonnes (infos et formulaire) côte à côte.
+    */
+    display: flex;
+    
+    /* 
+        GAP: 3rem
+        Espace entre les deux colonnes.
+    */
+    gap: 3rem;
+    
+    /* 
+        BACKGROUND: white
+        Fond blanc.
+    */
+    background: white;
+    
+    /* 
+        BORDER-RADIUS: 20px
+        Angles arrondis.
+    */
+    border-radius: 20px;
+    
+    /* 
+        OVERFLOW: hidden
+        Cache ce qui dépasse (important pour que les enfants arrondis
+        ne débordent pas).
+    */
+    overflow: hidden;
+    
+    /* 
+        BOX-SHADOW: 0 10px 30px rgba(0,0,0,0.1)
+        Ombre plus prononcée pour faire ressortir le bloc.
+    */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/*
+    SELECTEUR DE CLASSE (.contact-info)
+    Colonne de gauche avec les informations de contact.
+*/
+
+.contact-info {
+    /* 
+        FLEX: 1
+        Prend une part de l'espace disponible.
+    */
+    flex: 1;
+    
+    /* 
+        BACKGROUND: linear-gradient()
+        Dégradé violet pour la colonne d'informations.
+    */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    
+    /* 
+        PADDING: 3rem
+        Espacement interne important (48px).
+    */
+    padding: 3rem;
+    
+    /* 
+        COLOR: white
+        Texte blanc sur fond violet.
+    */
+    color: white;
+}
+
+.contact-info h3 {
+    /* 
+        FONT-SIZE: 1.8rem
+        Taille du titre.
+    */
+    font-size: 1.8rem;
+    
+    /* 
+        MARGIN-BOTTOM: 1rem
+        Espace sous le titre.
+    */
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    /* 
+        MARGIN-BOTTOM: 2rem
+        Espace sous le paragraphe.
+    */
+    margin-bottom: 2rem;
+    
+    /* 
+        OPACITY: 0.9
+        Rend le texte légèrement transparent (10% de transparence).
+        Adoucit visuellement.
+    */
+    opacity: 0.9;
+}
+
+/*
+    SELECTEUR DE CLASSE (.contact-details)
+    Liste des coordonnées.
+*/
+
+.contact-details {
+    /* 
+        LIST-STYLE: none
+        Supprime les puces.
+    */
+    list-style: none;
+}
+
+.contact-details li {
+    /* 
+        MARGIN-BOTTOM: 1rem
+        Espace entre chaque élément de la liste.
+    */
+    margin-bottom: 1rem;
+    
+    /* 
+        DISPLAY: flex
+        Permet d'aligner l'icône et le texte.
+    */
+    display: flex;
+    
+    /* 
+        ALIGN-ITEMS: center
+        Aligne verticalement l'icône et le texte.
+    */
+    align-items: center;
+    
+    /* 
+        GAP: 0.5rem
+        Espace entre l'icône (📧, 📱, 📍) et le texte.
+    */
+    gap: 0.5rem;
+}
+
+.contact-details a {
+    /* 
+        COLOR: white
+        Liens en blanc.
+    */
+    color: white;
+    
+    /* 
+        TEXT-DECORATION: none
+        Supprime le soulignement.
+    */
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    /* 
+        TEXT-DECORATION: underline
+        Réapparition du soulignement au survol.
+        Indique que c'est cliquable.
+    */
+    text-decoration: underline;
+}
+
+/*
+    SELECTEUR DE CLASSE (.contact-form)
+    Colonne de droite avec le formulaire.
+*/
+
+.contact-form {
+    /* 
+        FLEX: 1
+        Prend une part de l'espace disponible.
+    */
+    flex: 1;
+    
+    /* 
+        PADDING: 3rem
+        Espacement interne.
+    */
+    padding: 3rem;
+}
+
+/*
+    SELECTEUR DE CLASSE (.form-group)
+    Groupe de champ de formulaire (label + input/textarea).
+*/
+
+.form-group {
+    /* 
+        MARGIN-BOTTOM: 1.5rem
+        Espace entre chaque champ du formulaire.
+    */
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    /* 
+        DISPLAY: block
+        Le label occupe toute la largeur (passe à la ligne).
+    */
+    display: block;
+    
+    /* 
+        MARGIN-BOTTOM: 0.5rem
+        Espace entre le label et l'input.
+    */
+    margin-bottom: 0.5rem;
+    
+    /* 
+        FONT-WEIGHT: 500
+        Label en semi-gras.
+    */
+    font-weight: 500;
+    
+    /* 
+        COLOR: #333
+        Couleur gris foncé.
+    */
+    color: #333;
+}
+
+/*
+    SELECTEURS GROUPÉS
+    Style commun pour les inputs, select et textarea.
+*/
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    /* 
+        WIDTH: 100%
+        Le champ prend toute la largeur disponible.
+    */
+    width: 100%;
+    
+    /* 
+        PADDING: 0.75rem
+        Espacement interne pour rendre les champs plus confortables.
+    */
+    padding: 0.75rem;
+    
+    /* 
+        BORDER: 1px solid #ddd
+        Bordure gris clair.
+    */
+    border: 1px solid #ddd;
+    
+    /* 
+        BORDER-RADIUS: 8px
+        Angles légèrement arrondis.
+    */
+    border-radius: 8px;
+    
+    /* 
+        FONT-FAMILY: inherit
+        Hérite de la police du parent (Poppins).
+        Sans cela, certains navigateurs utilisent une police par défaut.
+    */
+    font-family: inherit;
+    
+    /* 
+        TRANSITION: border-color 0.3s ease
+        Anime le changement de couleur de la bordure.
+    */
+    transition: border-color 0.3s ease;
+}
+
+/*
+    PSEUDO-CLASSE :focus
+    S'applique quand le champ est sélectionné (clic ou tabulation).
+*/
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    /* 
+        OUTLINE: none
+        Supprime le contour bleu par défaut des navigateurs.
+        (Attention : à faire avec parcimonie pour l'accessibilité)
+    */
+    outline: none;
+    
+    /* 
+        BORDER-COLOR: #667eea
+        Change la couleur de la bordure en violet.
+    */
+    border-color: #667eea;
+    
+    /* 
+        BOX-SHADOW: 0 0 0 3px rgba(102,126,234,0.1)
+        Ajoute un halo violet transparent autour du champ.
+        Remplace l'outline par défaut tout en gardant un indicateur visuel.
+    */
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/*
+    SELECTEUR DE CLASSE (.btn-primary)
+    Variante du bouton pour le formulaire.
+*/
+
+.btn-primary {
+    /* 
+        WIDTH: 100%
+        Le bouton prend toute la largeur du formulaire.
+    */
+    width: 100%;
+    
+    /* 
+        PADDING: 12px
+        Espacement interne vertical.
+    */
+    padding: 12px;
+    
+    /* 
+        FONT-SIZE: 1rem
+        Taille de police normale.
+    */
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   PARTIE 8 : FOOTER
+   ========================================================================== */
+
+/*
+    SELECTEUR PAR ÉLÉMENT (footer)
+    Pied de page.
+*/
+
+footer {
+    /* 
+        BACKGROUND-COLOR: #2c3e50
+        Fond bleu-gris foncé.
+    */
+    background-color: #2c3e50;
+    
+    /* 
+        COLOR: white
+        Texte blanc.
+    */
+    color: white;
+    
+    /* 
+        TEXT-ALIGN: center
+        Centre le texte.
+    */
+    text-align: center;
+    
+    /* 
+        PADDING: 2rem 0
+        Espacement interne vertical.
+    */
+    padding: 2rem 0;
+}
+
+/* ==========================================================================
+   PARTIE 9 : RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+
+/*
+    MEDIA QUERY
+    Applique des styles conditionnellement selon la taille de l'écran.
+    Ici, pour les écrans de moins de 768px (tablettes et mobiles).
+*/
+
+@media (max-width: 768px) {
+    /*
+        Les styles dans ce bloc ne s'appliquent que si la largeur de l'écran
+        est inférieure ou égale à 768px.
+    */
+    
+    .hero-content {
+        /* 
+            FLEX-DIRECTION: column
+            Passe les éléments en colonne (l'un en dessous de l'autre)
+            au lieu de ligne (côte à côte).
+        */
+        flex-direction: column;
+        
+        /* 
+            TEXT-ALIGN: center
+            Centre le texte sur mobile.
+        */
+        text-align: center;
+    }
+    
+    .contact-wrapper {
+        /* 
+            FLEX-DIRECTION: column
+            Les deux colonnes (infos et formulaire) se superposent.
+        */
+        flex-direction: column;
+    }
+    
+    nav ul {
+        /* 
+            GAP: 1rem
+            Réduit l'espace entre les liens de navigation
+            pour les petits écrans.
+        */
+        gap: 1rem;
+    }
+    
+    .section-title {
+        /* 
+            FONT-SIZE: 2rem
+            Réduit la taille des titres sur mobile.
+        */
+        font-size: 2rem;
+    }
+    
+    .projets-table {
+        /* 
+            FONT-SIZE: 0.85rem
+            Réduit la taille du texte du tableau
+            pour qu'il tienne mieux sur petit écran.
+        */
+        font-size: 0.85rem;
+    }
+    
+    .projets-table th,
+    .projets-table td {
+        /* 
+            PADDING: 0.75rem 0.5rem
+            Réduit le padding des cellules pour gagner de l'espace.
+        */
+        padding: 0.75rem 0.5rem;
+    }
+}
+
+/*
+    MEDIA QUERY pour les très petits écrans (mobiles < 480px)
+*/
+
+@media (max-width: 480px) {
+    header .container {
+        /* 
+            FLEX-DIRECTION: column
+            Empile le logo et la navigation.
+        */
+        flex-direction: column;
+        
+        /* 
+            GAP: 1rem
+            Espace entre le logo et la navigation.
+        */
+        gap: 1rem;
+    }
+    
+    .hero-text h2 {
+        /* 
+            FONT-SIZE: 1.8rem
+            Réduit encore la taille du titre principal.
+        */
+        font-size: 1.8rem;
+    }
+    
+    .skills-grid {
+        /* 
+            GRID-TEMPLATE-COLUMNS: 1fr
+            Force les cartes à s'afficher en une seule colonne.
+        */
+        grid-template-columns: 1fr;
+    }
+}
